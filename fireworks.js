@@ -92,3 +92,15 @@ addEventListener('click', (event) => {
         particles.push(new Particle(mouse.x,mouse.y, 3, `hsl(${Math.random() * 360}, 50%, 50%)`, {x: Math.cos(angleIncrement* i) * Math.random() * power, y: Math.sin(angleIncrement *i) * Math.random() * power}))
     }
 }) 
+
+addEventListener('touchstart', (event) => {
+    mouse.x = event.clientX;
+    mouse.y = event.clientY;
+
+    const power = 5;
+    const particleCount = 400;
+    const angleIncrement = (Math.PI * 2) / particleCount;
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle(mouse.x,mouse.y, 3, `hsl(${Math.random() * 360}, 50%, 50%)`, {x: Math.cos(angleIncrement* i) * Math.random() * power, y: Math.sin(angleIncrement *i) * Math.random() * power}))
+    }
+}) 
